@@ -1,0 +1,22 @@
+[
+  {
+    "question": "¿Cuál equipo es conocido como La Liga en Costa Rica?",
+    "answers": ["Saprissa", "Alajuelense", "Herediano", "Cartagines"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Qué color predomina en el uniforme tradicional de Alajuelense?",
+    "answers": ["Azul y blanco", "Rojo y negro", "Morado y blanco", "Verde y blanco"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿En qué provincia se ubica el estadio Alejandro Morera Soto?",
+    "answers": ["San Jose", "Cartago", "Alajuela", "Heredia"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuántas opciones de respuesta tiene cada pregunta de este quiz?",
+    "answers": ["Dos", "Tres", "Cuatro", "Cinco"],
+    "correctAnswer": 2
+  }
+]

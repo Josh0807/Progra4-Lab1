@@ -1,0 +1,313 @@
+/* Contenedor principal */
+.pokemon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 20px;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* Contenedor del componente */
+.pokemon-container {
+  background: linear-gradient(to bottom right, #ffffff 0%, #f8f9ff 100%);
+  padding: 50px;
+  border-radius: 30px;
+  width: 480px;
+  max-width: 100%;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  animation: fadeInDown 0.7s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título */
+.pokemon-header h1 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.pokemon-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pokemon-subtitle {
+  color: #888;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 5px 0 0 0;
+}
+
+/* Formulario de búsqueda */
+.search-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.pokemon-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid #e8e8ff;
+  border-radius: 18px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f5f7ff 0%, #eeefff 100%);
+  color: #333;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-weight: 500;
+}
+
+.pokemon-input:focus {
+  outline: none;
+  border-color: #f5576c;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(245, 87, 108, 0.1);
+  transform: translateY(-2px);
+}
+
+.pokemon-input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.search-button {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 12px 35px rgba(245, 87, 108, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+}
+
+.search-button:hover {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 50px rgba(245, 87, 108, 0.4);
+}
+
+.search-button:active {
+  transform: translateY(-1px);
+}
+
+/* Tarjeta de resultado */
+.pokemon-result {
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 18px;
+  border-bottom: 3px solid #f0f0f8;
+}
+
+.result-name {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1a1a2e;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.result-id {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 25px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.3);
+}
+
+/* Imagen del Pokémon */
+.image-container {
+  background: linear-gradient(135deg, #f5f7ff 0%, #eeefff 100%);
+  padding: 30px;
+  border-radius: 22px;
+  text-align: center;
+  margin-bottom: 25px;
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed rgba(245, 87, 108, 0.2);
+}
+
+.pokemon-img {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 10px 25px rgba(245, 87, 108, 0.2));
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pokemon-img:hover {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 15px 40px rgba(245, 87, 108, 0.4));
+}
+
+/* Estadísticas */
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f5f7ff 0%, #eeefff 100%);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.stat-card:hover {
+  border-color: #f5576c;
+  background: linear-gradient(135deg, #fff1f5 0%, #f8f2ff 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(245, 87, 108, 0.15);
+}
+
+.stat-label {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mensaje de error */
+.error-message {
+  background: linear-gradient(135deg, #ffcccc 0%, #ffe0e0 100%);
+  color: #c41e3a;
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  border-left: 5px solid #c41e3a;
+  animation: slideInWarning 0.4s ease-out;
+}
+
+@keyframes slideInWarning {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .pokemon-wrapper {
+    padding: 10px;
+  }
+
+  .pokemon-container {
+    padding: 35px 20px;
+    width: 100%;
+    border-radius: 24px;
+  }
+
+  .pokemon-header h1 {
+    font-size: 24px;
+  }
+
+  .result-name {
+    font-size: 22px;
+  }
+
+  .pokemon-img {
+    width: 160px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+
+  .image-container {
+    min-height: 180px;
+    padding: 20px;
+  }
+}
+
+/* Estado vacío */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.empty-state p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}

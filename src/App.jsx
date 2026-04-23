@@ -3,12 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import SaludoWuipy from './Components/SaludoWuipy'
+import BuscarPokemon from './Components/BuscarPokemon'
+import Quiz from './Components/Quiz'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div>
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -24,10 +27,16 @@ function App() {
         <button
           className="counter"
           onClick={() => setCount((count) => count + 1)}
-        >
+        >    
           Count is {count}
         </button>
+
+         <SaludoWuipy />
+         <BuscarPokemon />
+         <Quiz />
+
       </section>
+     
 
       <div className="ticks"></div>
 
@@ -114,7 +123,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-    </>
+    </div>
   )
 }
 
