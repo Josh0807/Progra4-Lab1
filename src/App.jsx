@@ -4,6 +4,8 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import SaludoWuipy from './Components/SaludoWuipy'
+import BuscarPokemon from './Components/BuscarPokemon'
+import Quiz from './Components/Quiz'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,12 +27,17 @@ function App() {
         <button
           className="counter"
           onClick={() => setCount((count) => count + 1)}
-        >
+        >    
           Count is {count}
         </button>
+
+         <SaludoWuipy />
+         <BuscarPokemon />
+         <Quiz />
+
       </section>
      
-      <SaludoWuipy />
+
       <div className="ticks"></div>
 
       <section id="next-steps">
