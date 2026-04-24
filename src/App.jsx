@@ -1,120 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <main className="document-page">
+      <section className="hero-panel">
+        <p className="eyebrow">Documento digitalizado</p>
+        <h1>Visualizador del documento</h1>
+        <p className="hero-copy">
+          El archivo fue integrado al proyecto para que podas abrirlo y revisarlo
+          directamente desde la aplicacion en Visual Studio Code.
+        </p>
+
+        <div className="hero-actions">
+          <a className="primary-action" href="/documento.pdf" target="_blank" rel="noreferrer">
+            Abrir en una pestaña
+          </a>
+          <a className="secondary-action" href="/documento.pdf" download>
+            Descargar PDF
+          </a>
         </div>
-        <div>
-          <h1>Get started</h1>
+      </section>
+
+      <section className="content-grid">
+        <article className="info-card">
+          <h2>Como usarlo</h2>
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            Si ejecutas el proyecto con Vite, el documento se muestra abajo
+            embebido dentro de la interfaz. Tambien queda disponible en la ruta
+            <code>/documento.pdf</code>.
           </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+        </article>
+
+        <article className="info-card">
+          <h2>Archivo agregado</h2>
+          <p>
+            El PDF original fue copiado al directorio <code>public/</code> para
+            que el navegador pueda servirlo sin modificar su contenido.
+          </p>
+        </article>
       </section>
 
-      <div className="ticks"></div>
+      <section className="viewer-shell" aria-label="Vista previa del PDF">
+        <div className="viewer-header">
+          <div>
+            <p className="viewer-label">Vista previa</p>
+            <h2>documento.pdf</h2>
+          </div>
+          <a className="text-action" href="/documento.pdf" target="_blank" rel="noreferrer">
+            Ver completo
+          </a>
+        </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
+        <iframe
+          className="pdf-frame"
+          src="/documento.pdf"
+          title="Documento PDF"
+        />
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    </main>
   )
 }
 
